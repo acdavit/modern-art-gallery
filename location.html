@@ -1,0 +1,200 @@
+<!--
+--  
+--  BitCamp Assignment No.6 - Modern Art Gallery
+--
+--  Made by David Abakelia-Chartia (acdavit)
+--
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Art gallery website</title>
+  <style>
+  	@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@900&family=Outfit:wght@300&display=swap');
+  	.big-shoulders{
+  		font-family: 'Big Shoulders Display', cursive;
+  		text-transform: uppercase;
+  	}
+  	:root{
+  		--almost-black: #151515;
+  		--white: #ffffff;
+  		--gold: #d5966c;
+  		--dark-grey: #444444;
+   	}
+  	
+   	body{
+  		font-family: 'Outfit', sans-serif;
+  		background-color: var(--almost-black);
+  		color: var(--white);
+  	}
+  	
+  	#image-map{
+  		width: 100%;
+  	}
+  	
+  	body, #image-map, #back-to-home{
+  		margin: 0;
+  		padding: 0;
+  	}
+  	
+  	#back-to-home{
+  		background-color: var(--almost-black);
+  		color: var(--white);
+  		width: 260px;
+  		height: 72px;
+  		border: none;
+  		display: flex;
+  		justify-content: center;
+  		align-items: center;
+  		padding: 0;
+  		position: fixed;
+  	}
+  	
+  	#back-to-home > p{
+  		width: 204px;
+  		font-size: 20px;
+  		letter-spacing: 3.63px;
+  	}
+  	
+  	#back-to-home > img{
+  		padding: 24px;
+  		margin: 0;
+  		background-color: var(--gold);
+  	}
+  	
+  	#back-to-home:hover{
+  		background-color: var(--gold);
+  	}
+  	
+  	#back-to-home:hover img{
+  		background-color: var(--almost-black);
+  	}
+  	
+  	#info{
+  		padding: 48px 16px;
+  		margin: 0;
+  	}
+  	
+  	#location-mobile, #location-tablet{
+  		margin: 0;
+  		margin-bottom: 48px;
+  		font-size: 50px;
+  		line-height: 45px;
+  	}
+  	
+  	#street{
+  		margin: 20px 0;
+  		color: var(--gold);
+  		size: 30px;
+  	}
+  	
+  	#info p{
+  		font-size: 18px;
+  		line-height: 28px;
+  	}
+  	
+  	footer{
+			background-color: var(--gold);
+			padding: 48px 32px;  	
+			margin-top: 8px;
+  	}
+  	footer > p{
+  		color: var(--almost-black);
+  		margin: 38px 0;
+  		font-weight: 300;
+			font-size: 16px;
+			line-height: 26px;
+  	}
+  	.social-icon{
+  		margin: 0 10px;
+  		filter: invert(1);
+  	}
+  	#fb{
+  		margin-left: 0px
+  	}
+  	#location-tablet{
+  		display: none;
+  	}
+  	
+  	@media screen and (min-width: 768px){
+  		#image-map{
+  			content: url("./assets/tablet/image-map.png");
+  		}
+  		#info{
+  			display: flex;
+  			flex-direction: row;
+  			justify-content: space-between;
+  			width: 100vw%;
+  			padding: 88px 40px;
+  		}
+  		#info-aside{
+  			max-width: 398px;
+  		}
+  		#location-mobile{
+  			display: none;
+  		}
+  		#location-tablet{
+  			display: inline;
+  			font-size: 55px;
+  			line-height: 50px;
+  		}
+  		#back-to-home{
+  			left: 40px;
+  		}
+  	}
+  	@media screen and (min-width: 1440px){
+  		#image-map{
+  			content: url("./assets/desktop/image-map.png");
+  		}
+  		#info{
+  			padding: 104px 165px;
+  		}
+  		#info-aside{
+  			max-width: 540px;
+  		}
+  		#location-tablet{
+  			display: inline;
+  			font-size: 55px;
+  			line-height: 50px;
+  		}
+  		#back-to-home{
+  			left: 165px;
+  		}
+  	}
+  </style>
+</head>
+<body>
+	<a href="./index.html">
+		<button id="back-to-home" href="./index.html">
+			<img src="./assets/icon-arrow-left.svg"></img>
+			<p class="big-shoulders">Back to home</p>
+		</button>
+	</a>
+	<img id="image-map" src="./assets/mobile/image-map.png"></img>
+	<section id="info">
+		<h1 id="location-mobile" class="big-shoulders">Our location</h1>
+		<h1 id="location-tablet" class="big-shoulders">Our<br>location</h1>
+		<div id="info-aside">
+			<h2 id="street" class="big-shoulders">99 King Street</h2>
+  		<p>Newport<br>RI 02840<br>United States of America</p>
+  		<p>Our newly opened gallery is located near the Edward King House on 99 King Street, the Modern Art Gallery is free to all visitors and open seven days a week from 8am to 9pm.</p>			
+		</div>
+
+	</section>
+	
+  <footer>
+		<img src="./assets/logo-dark.svg"></img>
+		<p>The Modern Art Gallery is free to all visitors and open seven days a week from 8am to 9pm. Find us at 99 King Street, Newport, USA.</p>
+		<img src="./assets/icon-facebook.svg" class="social-icon" id="fb"></img>
+		<img src="./assets/icon-instagram.svg" class="social-icon" id="ig"></img>
+		<img src="./assets/icon-twitter.svg" class="social-icon" id="tt"></img>
+	</footer>
+</body>
+</html>
+

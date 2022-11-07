@@ -1,0 +1,385 @@
+<!--
+--  
+--  BitCamp Assignment No.6 - Modern Art Gallery
+--
+--  Made by David Abakelia-Chartia (acdavit)
+--
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+  <title>Frontend Mentor | Art gallery website</title>
+  <style>
+		@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@900&family=Outfit:wght@300&display=swap');
+  	.big-shoulders{
+  		font-family: 'Big Shoulders Display', cursive;
+  		text-transform: uppercase;
+  	}
+  	:root{
+  		--almost-black: #151515;
+  		--white: #ffffff;
+  		--gold: #d5966c;
+  		--dark-grey: #444444;
+   	}
+  	
+   	body{
+  		font-family: 'Outfit', sans-serif;
+  		color: var(--almost-black);
+  	}
+  	
+  	body, #image-hero, #our-location{
+  		margin: 0;
+  		padding: 0;
+  	}
+  	
+  	#image-hero{
+  		width: 100%;
+  		max-width: 768px;
+  	}
+  	
+  	#title{
+  		font-size: 60px;
+  		line-height: 55px;
+  	}
+  	
+  	#paragraph{
+  		color: var(--dark-grey);
+  		line-height: 28px;
+  		font-size: 18px;
+  	}
+  	
+  	#title, #paragraph, #our-location{
+  		margin: 16px;
+  		margin-top: 32px;
+  		margin-bottom: 32px;	
+  	}
+  	
+  	#our-location{
+  		background-color: var(--almost-black);
+  		color: var(--white);
+  		width: 260px;
+  		height: 72px;
+  		border: none;
+  		display: flex;
+  		justify-content: center;
+  		align-items: center;
+  		padding: 0;
+  	}
+  	
+  	#our-location > p{
+  		width: 204px;
+  		font-size: 20px;
+  		letter-spacing: 3.63px;
+  	}
+  	
+  	#our-location > img{
+  		padding: 24px;
+  		margin: 0;
+  		background-color: var(--gold);
+  	}
+  	
+  	#our-location:hover{
+  		background-color: var(--gold);
+  	}
+  	
+  	#our-location:hover img{
+  		background-color: var(--almost-black);
+  	}
+  	
+  	#gallery-grid{
+  		padding: 15px;
+  	}
+  	
+  	#gallery-grid img{
+  		width: 100%;
+  		margin: 7.5px 0;
+  	}
+  	
+  	.text-tile{
+  		margin: 7.5px 0;
+  	}
+  	
+  	.text-tile > h1{
+  		font-family: 'Big Shoulders Display', cursive;
+  		font-size: 50px;
+  		font-weight: 900;
+  		line-height: 45px;
+  		margin-top: 25px;
+  		color: var(--almost-black);
+  		text-transform: uppercase;
+  	}
+  	
+  	.text-tile > p{
+  		font-size: 18px;
+  		font-weight: 300;
+  		line-height: 28px;
+  		margin-top: 21px;
+  		color: var(--dark-grey);
+  	}
+  	
+  	#text-tile-2{
+  		background-color: var(--almost-black);
+  		color: var(--white);
+  		padding: 24px;
+  	}
+  	#text-tile-2 > h1, #text-tile-2 > p{
+  		color: white;
+  	}
+  	footer{
+			background-color: var(--almost-black);
+			padding: 48px 32px;  	
+			margin-top: 120px;
+  	}
+  	footer > p{
+  		color: var(--white);
+  		margin: 38px 0;
+  		font-weight: 300;
+			font-size: 16px;
+			line-height: 26px;
+  	}
+  	.social-icon{
+  		margin: 0 10px;
+  	}
+  	#fb{
+  		margin-left: 0px
+  	}
+  	#inspired{
+  		margin: 0;
+  		padding: 0;
+  	}
+  	
+  	#black-box{
+  		display: none;
+  	}
+  	
+  	a:link {
+  		text-decoration: none;
+		}
+
+		a:visited {
+		  text-decoration: none;
+		}
+
+		a:hover {
+		  text-decoration: none;
+		}
+
+		a:active {
+  		text-decoration: none;
+		}
+  	
+  	@media screen and (min-width: 768px){
+  		#inspired{
+  			margin: 0;
+  			padding: 0;
+  			width: 280px;
+  		}
+  		#introduction{
+  			display: flex;
+  			flex-direction: row;
+  		}
+  		#image-hero{
+  			content: url("./assets/tablet/image-hero.jpg");
+  			min-width: 56%;
+  		}
+  		#modern-art-gallery{
+  			position: relative;
+  			z-index: 1;
+  			margin: 0;
+  			padding: 0;
+  			left: -48px;
+  			display: flex;
+  			flex-direction: column;
+  			justify-content: center;
+  		}
+  		#gallery-grid{
+  			max-width: 690px;
+  			display: flex;
+  			align-items: space-between;
+  			flex-wrap: wrap;
+  		}
+  		#text-tile-1{
+  			width: 280px;
+  			height: 400px;
+  			order: 0;
+  			margin: 0;
+  			margin-right: 11px;
+  			margin-bottom: 11px;
+  			
+  		}
+  		#gallery-grid > #image-1{
+  			width: 398px;
+  			height: 400px;
+  			content: url("./assets/tablet/image-grid-1.jpg");
+  			order: 1;
+  			margin: 0;
+  			margin-bottom: 11px;
+  		}
+  		#gallery-grid > #image-2{
+  			width: 398px;
+  			height: 720px;
+  			content: url("./assets/tablet/image-grid-2.jpg");
+  			order: 2;
+  			margin: 0;
+  			margin-right: 11px;
+  		}
+  		#inspired #image-3{
+  			width: 280px;
+  			height: 313px;
+  			content: url("./assets/tablet/image-grid-3.jpg");
+  			order: 3;
+  			margin: 0;
+  			margin-bottom: 11px;
+  		}
+  		#inspired #text-tile-2{
+  			max-width: 280px;
+  			height: 345px;
+  			order: 4;
+  			margin: 0;
+  		}
+  		#inspired{
+  			order: 3;
+  			margin: 0;
+  		}
+  		#gallery-grid{
+  			margin: 120px auto;
+  		}
+  		.text-tile{
+  			display: flex;
+  			flex-direction: column;
+  			justify-content: center;
+  			align-items: flex-start;
+  		}
+  		#text-tile-2{
+  			align-items: center;
+  		}
+  	}
+  	
+  	@media screen and (min-width: 1440px){
+  		
+  		#black-box{
+  			display: flex;
+  			justify-content: center;
+  			align-items: center;
+  			padding: 0;
+  			margin: 0;
+  			background-color: var(--almost-black);
+  			min-width: 31.25vw;
+  		}
+  		#image-hero{
+  			min-width: 37vw;
+  			content: url("./assets/desktop/image-hero.jpg");
+  		}
+  		#black-box > h1{
+  			color: var(--almost-black);
+  			position: absolute;
+  			left: 200px;
+  			font-size: 96px;
+  			line-height: 88px;
+  			filter: invert(1);
+				mix-blend-mode: difference;
+  		}
+  		#title{
+  			display: none;
+  		}
+  		#gallery-grid{
+  			max-width: 1110px;
+  		}
+  		#text-tile-1{
+  			width: 445px;
+  			margin-right: 30px;
+  			margin-bottom: 30px;
+  			
+  		}
+  		#gallery-grid > #image-1{
+  			width: 635px;
+  			content: url("./assets/desktop/image-grid-1.jpg");
+  			margin-bottom: 30px;
+  		}
+  		#gallery-grid > #image-2{
+  			width: 635px;
+  			content: url("./assets/desktop/image-grid-2.jpg");
+  			margin-right: 30px;
+  		}
+  		#inspired #image-3{
+  			width: 445px;
+  			content: url("./assets/desktop/image-grid-3.jpg");
+  		}
+  		#inspired #text-tile-2{
+  			max-width: 445px;
+  			width: 400px;
+  			height: 342px;
+  		}
+  		#inspired{
+  			order: 3;
+  			margin: 0;
+  		}
+  		#gallery-grid{
+  			margin: 180px auto;
+  		}
+  		.text-tile > h1{
+  			max-width: 350px;
+  			font-size: 60px;
+  			line-height: 60px;
+  			margin: 0;
+  		}
+  		.text-tile > p{
+  			max-width: 350px;
+  			font-size: 22px;
+  		}
+  	}
+  	
+  </style>
+</head>
+<body>
+	<section id="introduction">
+		<div id="black-box"><h1 class="big-shoulders">Modern<br>Art Gallery</h1></div>
+		<img id="image-hero" src="./assets/mobile/image-hero.jpg"></img>
+		<div id="modern-art-gallery">
+			<h1 class="big-shoulders" id="title">Modern<br>Art Gallery</h1>
+			
+			<p id="paragraph">The arts in the collection of the Modern Art Gallery all started from a spark of inspiration. Will these pieces inspire you? Visit us and find out.</p>
+			
+			<a href="./location.html">
+				<button id="our-location">
+					<p class="big-shoulders">Our location</p>
+					<img src="./assets/icon-arrow-right.svg"></img>
+				</button>
+			</a>
+		</div> 
+	</section>
+	
+	<section id="gallery-grid">
+		<img src="./assets/mobile/image-grid-1.jpg" id="image-1"></img>
+		
+		<div class="text-tile" id="text-tile-1">
+			<h1>Your day at the gallery</h1>
+			<p>Wander through our distinct collections and find new insights about our artists. Dive into the details of their creative process.</p>
+		</div>
+	
+		<img src="./assets/mobile/image-grid-2.jpg" id="image-2"></img>
+	
+		<div id="inspired">
+			<img src="./assets/mobile/image-grid-3.jpg" id="image-3"></img>
+	
+			<div class="text-tile" id="text-tile-2">
+				<h1>Come &amp; be inspired</h1>
+				<p>We’re excited to welcome you to our gallery and see how our collections influence you.</p>
+			</div>		
+		</div>
+	
+	</section>
+	
+	<footer>
+		<img src="./assets/logo-light.svg"></img>
+		<p>The Modern Art Gallery is free to all visitors and open seven days a week from 8am to 9pm. Find us at 99 King Street, Newport, USA.</p>
+		<img src="./assets/icon-facebook.svg" class="social-icon" id="fb"></img>
+		<img src="./assets/icon-instagram.svg" class="social-icon" id="ig"></img>
+		<img src="./assets/icon-twitter.svg" class="social-icon" id="tt"></img>
+	</footer>
+</body>
+</html>
